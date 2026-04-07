@@ -1,0 +1,14 @@
+# render.yaml - Render.com Background Worker Config
+# Bu dosya Render.com'a otomatik deployment sağlar
+
+services:
+  - type: worker
+    name: stock-telegram-bot
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: 8745144801:AAGyQbL7loQKVaR8amZ5IxWLzfmqb6cfEiI
